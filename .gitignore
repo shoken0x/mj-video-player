@@ -67,3 +67,5 @@ fastlane/screenshots
 fastlane/test_output
 
 MjVideoPlayer/*.mp4
+MjVideoPlayer/*.png
+MjVideoPlayer/Base.lproj/*.png
