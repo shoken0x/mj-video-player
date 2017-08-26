@@ -13,6 +13,7 @@
 		95C49EEB1F51624600EC928D /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 95C49EE71F51624600EC928D /* loading.gif */; };
 		95C49EED1F51624600EC928D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C49EE91F51624600EC928D /* ViewController.swift */; };
 		95C4A17E1F5162A500EC928D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C4A0A21F5162A500EC928D /* Main.storyboard */; };
+		95E63FD11F517B3D00DACEEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E63FD01F517B3D00DACEEC /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		95C49EE71F51624600EC928D /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = loading.gif; path = MjVideoPlayer/loading.gif; sourceTree = "<group>"; };
 		95C49EE91F51624600EC928D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = MjVideoPlayer/ViewController.swift; sourceTree = "<group>"; };
 		95C4A0A31F5162A500EC928D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MjVideoPlayer/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95E63FD01F517B3D00DACEEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MjVideoPlayer/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				95C49EE61F51624600EC928D /* AppDelegate.swift */,
 				95C49EE71F51624600EC928D /* loading.gif */,
 				95C49EE91F51624600EC928D /* ViewController.swift */,
+				95E63FD01F517B3D00DACEEC /* Images.xcassets */,
 			);
 			name = MjVideoPlayer;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E63FD11F517B3D00DACEEC /* Images.xcassets in Resources */,
 				95C49EEB1F51624600EC928D /* loading.gif in Resources */,
 				95C4A17E1F5162A500EC928D /* Main.storyboard in Resources */,
 			);
@@ -402,6 +406,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MjVideoPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjalgorithm.MjVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -417,6 +422,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = MjVideoPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mjalgorithm.MjVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
