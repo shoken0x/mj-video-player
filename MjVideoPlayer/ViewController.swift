@@ -16,29 +16,23 @@ class ViewController: NSViewController {
   @IBOutlet weak var imageView: NSImageView!
   @IBOutlet weak var logView: NSTextView!
   @IBOutlet weak var graphView: NSImageView!
+
   var videoPlayer : AVPlayer!
   var imageTimer: Timer!
   var logTimer: Timer!
   var counter = 0
   var timerOffset = 1.5
+  let homeDirURL = FileManager.default.homeDirectoryForCurrentUser
+  
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    logView.backgroundColor = NSColor.black
-    logView.textColor = NSColor.green
-
-    //let videoPath = Bundle.main.path(forResource: "test", ofType: "mp4")
-    let videoPath = "/Users/shoken/Downloads/mondo/mondo006.mp4"
-    let graphPath = Bundle.main.path(forResource: "loading", ofType: "gif")
-    let graphAsset = NSImage(contentsOfFile: graphPath!)
-
-    graphView.image = graphAsset
-    graphView.animates = true
-
-
+    let videoPath = homeDirURL.path + "/Downloads/mjvideo/001.mp4"
     let avAsset = AVURLAsset(url: URL(fileURLWithPath: videoPath))
     let playerItem = AVPlayerItem(asset: avAsset)
 
+    logView.backgroundColor = NSColor.black
+    logView.textColor = NSColor.green
     videoPlayer = AVPlayer(playerItem: playerItem)
     playerView.player = videoPlayer
     playerView.showsFullScreenToggleButton = true
@@ -66,15 +60,19 @@ class ViewController: NSViewController {
     logView.insertText("update\r", replacementRange: NSMakeRange(-1, 0))
     let prefix = "o_r_img_"
     let imageNum = String(format: "%04d", counter)
-    //let imagePath = Bundle.main.path(forResource: prefix + imageNum, ofType: "png")
-    let imagePath = "/Users/shoken/Downloads/mondo_cascade/" + prefix + imageNum + ".png"
+    let imagePath = homeDirURL.path + "/Downloads/cascade/" + prefix + imageNum + ".png"
+    let graphPath = homeDirURL.path + "/Downloads/ssd/" + prefix + imageNum + ".png"
     NSLog(prefix + imageNum)
     logView.insertText(prefix + imageNum + "\r", replacementRange: NSMakeRange(-1, 0))
+    
     if FileManager.default.fileExists(atPath: imagePath) {
       let imgAsset = NSImage(contentsOfFile: imagePath)
+      let graphAsset = NSImage(contentsOfFile: graphPath)
+      
       NSLog(imagePath)
       logView.insertText(imagePath + "\r", replacementRange: NSMakeRange(-1, 0))
       imageView.image = imgAsset
+      graphView.image = graphAsset
     } else {
       NSLog("Image missing.")
     }
